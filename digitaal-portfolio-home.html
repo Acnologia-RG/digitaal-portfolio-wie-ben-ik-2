@@ -8,17 +8,16 @@
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed" rel="stylesheet">
 		<script src="https://use.fontawesome.com/3a7658e73f.js"></script>
 		<script>
-		function clickCounter() {
+			localStorage.clickcount = 0;
+			function clickCounter() {
 			if(typeof(Storage) !== "undefined") {
 				if (localStorage.clickcount) {
 				localStorage.clickcount = Number(localStorage.clickcount)+1;
-			}
-			else {
-			localStorage.clickcount = 0;
+			} else {
+				localStorage.clickcount = 0;
 			}
 			document.getElementById("result").innerHTML = localStorage.clickcount;
-			}
-			else {
+			} else {
 			document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
 			}
 		}
@@ -44,6 +43,6 @@
 
 		<a id="school" href="school_work.html"> <button> school work </button> </a>
 
-		<a id="useless" href="#"> <button onclick="clickCounter()" type="button"> the useless button <span id="result"></span> </button> </a>
+		<a id="useless"> <button onclick="clickCounter()" type="button"> the useless button <span id="result"></span> </button> </a>
 	</body>
 </html>
